@@ -1,5 +1,9 @@
 # Data structures and Algorithms
 
+## What is it:
+
+- This repository consists of select questions and their solutions picked from leetcode. These questions are assigned ids as in leetcode.
+
 ## How to add a new question:
 
 - Create a new directory with the question `id`.
