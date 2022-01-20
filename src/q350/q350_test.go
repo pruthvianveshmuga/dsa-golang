@@ -3,6 +3,8 @@ package q350
 import (
 	"strconv"
 	"testing"
+
+	"github.com/pruthvianveshmuga/dsa/utils"
 )
 
 type Case struct {
@@ -21,23 +23,11 @@ func TestSolutions(t *testing.T) {
 			}
 			for tcInd, tc := range tcs {
 				t.Run("c"+strconv.Itoa(tcInd+1), func(t *testing.T) {
-					if res := sol(tc.inp[0], tc.inp[1]); !deepEqual(res, tc.out) {
+					if res := sol(tc.inp[0], tc.inp[1]); !utils.DeepEqual(res, tc.out) {
 						t.Errorf("sol%v, testCase%v, %v: expected %v, got %v", solInd, tcInd, tc.inp, tc.out, res)
 					}
 				})
 			}
 		})
 	}
-}
-
-func deepEqual(a, b []int) bool {
-	if len(a) != len(b) {
-		return false
-	}
-	for i, v := range a {
-		if v != b[i] {
-			return false
-		}
-	}
-	return true
 }

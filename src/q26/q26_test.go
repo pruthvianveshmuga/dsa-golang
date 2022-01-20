@@ -30,14 +30,3 @@ func TestSolutions(t *testing.T) {
 		})
 	}
 }
-
-func deepCopyTestCases(testCases []Case) []Case {
-	tcs := make([]Case, len(testCases))
-	for tcInd, tc := range testCases {
-		inp := make([]int, len(tc.inp))
-		copy(inp, tc.inp)
-		out := tc.out
-		tcs[tcInd] = Case{inp, out}
-	}
-	return tcs
-}
