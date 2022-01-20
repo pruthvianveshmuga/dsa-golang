@@ -1,5 +1,7 @@
 package utils
 
+import "sort"
+
 type Case struct {
 	inp  []int
 	out int
@@ -27,3 +29,22 @@ func DeepEqual(a, b []int) bool {
 	}
 	return true
 }
+
+func DeepEqualWithoutOrder(a, b []int) bool {
+	if len(a) != len(b) {
+		return false
+	}
+	sort.Slice(a, func(i, j int) bool {
+		return a[i] < a[j]
+	})
+	sort.Slice(b, func(i, j int) bool {
+		return b[i] < b[j]
+	})
+	for i, v := range a {
+		if v != b[i] {
+			return false
+		}
+	}
+	return true
+}
+
