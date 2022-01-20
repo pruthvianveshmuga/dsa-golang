@@ -48,3 +48,10 @@ func DeepEqualWithoutOrder(a, b []int) bool {
 	return true
 }
 
+func ByteToInt(val byte) int {
+	if val == '.' {
+		return 0
+	} else {
+		return int(val-'0')
+	}
+}
