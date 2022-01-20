@@ -14,7 +14,7 @@ type Case struct {
 }
 
 func TestSolutions(t *testing.T) {
-	solutions := []func([]int, int) []int{Solution1}
+	solutions := []func([]int, int) []int{Solution1, Solution2, Solution3, Solution4}
 
 	for solInd, sol := range solutions {
 		t.Run("s"+strconv.Itoa(solInd+1), func(t *testing.T) {
