@@ -30,6 +30,18 @@ func DeepEqual(a, b []int) bool {
 	return true
 }
 
+func DeepEqual2(a, b [][]int) bool {
+	if len(a) != len(b) {
+		return false
+	}
+	for i, v := range a {
+		if !DeepEqual(v, b[i]) {
+			return false
+		}
+	}
+	return true
+}
+
 func DeepEqualWithoutOrder(a, b []int) bool {
 	if len(a) != len(b) {
 		return false
