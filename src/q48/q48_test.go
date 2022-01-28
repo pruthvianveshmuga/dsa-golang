@@ -13,6 +13,7 @@ type Case struct {
 }
 
 func TestSolutions(t *testing.T) {
+
 	solutions := []func([][]int) {Solution1, Solution2}
 
 	for solInd, sol := range solutions {
