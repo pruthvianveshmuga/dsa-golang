@@ -67,3 +67,9 @@ func ByteToInt(val byte) int {
 		return int(val-'0')
 	}
 }
+
+func Swap(a *int, b *int) {
+	temp := *a
+	*a = *b
+	*b = temp
+}
