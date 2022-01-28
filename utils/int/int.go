@@ -1,22 +1,6 @@
-package utils
+package int
 
 import "sort"
-
-type Case struct {
-	inp  []int
-	out int
-}
-
-func DeepCopyTestCases(testCases []Case) []Case {
-	tcs := make([]Case, len(testCases))
-	for tcInd, tc := range testCases {
-		inp := make([]int, len(tc.inp))
-		copy(inp, tc.inp)
-		out := tc.out
-		tcs[tcInd] = Case{inp, out}
-	}
-	return tcs
-}
 
 func DeepEqual(a, b []int) bool {
 	if len(a) != len(b) {
@@ -58,14 +42,6 @@ func DeepEqualWithoutOrder(a, b []int) bool {
 		}
 	}
 	return true
-}
-
-func ByteToInt(val byte) int {
-	if val == '.' {
-		return 0
-	} else {
-		return int(val-'0')
-	}
 }
 
 func Swap(a *int, b *int) {

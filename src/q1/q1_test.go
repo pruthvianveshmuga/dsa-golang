@@ -4,7 +4,7 @@ import (
 	"strconv"
 	"testing"
 
-	"github.com/pruthvianveshmuga/dsa/utils"
+	intUtils "github.com/pruthvianveshmuga/dsa/utils/int"
 )
 
 type Case struct {
@@ -25,7 +25,7 @@ func TestSolutions(t *testing.T) {
 			}
 			for tcInd, tc := range tcs {
 				t.Run("c"+strconv.Itoa(tcInd+1), func(t *testing.T) {
-					if res := sol(tc.inp1, tc.inp2); !utils.DeepEqualWithoutOrder(res, tc.out) {
+					if res := sol(tc.inp1, tc.inp2); !intUtils.DeepEqualWithoutOrder(res, tc.out) {
 						t.Errorf("sol%v, testCase%v, %v & %v: expected %v, got %v", solInd, tcInd, tc.inp1, tc.inp2, tc.out, res)
 					}
 				})
