@@ -3,6 +3,8 @@ package q344
 import (
 	"strconv"
 	"testing"
+
+	byteUtils "github.com/pruthvianveshmuga/dsa/utils/byte"
 )
 
 type Case struct {
@@ -20,29 +22,11 @@ func TestSolutions(t *testing.T) {
 			}
 			for tcInd, tc := range tcs {
 				t.Run("c"+strconv.Itoa(tcInd+1), func(t *testing.T) {
-					if sol(tc.inp); !DeepEqual(tc.inp, tc.out) {
+					if sol(tc.inp); !byteUtils.DeepEqual(tc.inp, tc.out) {
 						t.Errorf("sol%v, testCase%v: expected %v, got %v", solInd, tcInd, tc.out, tc.inp)
 					}
 				})
 			}
 		})
 	}
-}
-
-func DeepEqual(a, b []byte) bool {
-	if len(a) != len(b) {
-		return false
-	}
-	for i, v := range a {
-		if v != b[i] {
-			return false
-		}
-	}
-	return true
-}
-
-func Swap(a *byte, b *byte) {
-	temp := *a
-	*a = *b
-	*b = temp
 }
